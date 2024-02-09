@@ -1,0 +1,49 @@
+import Random
+import Scanner
+
+Deck class
+    String array of length 52
+    For loop through this length
+        Set each index to a card
+        (ex. AS, 1S, 2S, 3S, 4S, JS, QS, KS, AC, 1C, 2C, 3C, 4C, etc etc etc)
+
+    Draw() method returns random card from this array via Random
+
+    Hit() method
+    Stay() method
+    total() method
+        initialize total = 0
+        take player (or dealer's) number of cards as well as their cards array
+        for card in cards,
+            if card[0] equals J, Q, or K,
+                cardvalue = 10
+            else if card[0] equals A,
+                if total <= 10
+                    cardvalue = 11
+                else
+                    cardvalue = 1
+            else
+                cardvalue = (int) card[0]
+            total += cardvalue
+        return total
+
+
+Hand class
+    Player's cards array with length like... idk, 21
+    INT Number of player's cards //keep track, so like with each newcard +1 to total cards
+    Turns will be taken by accessing the deck class; same for dealer
+
+    deal 2 cards via draw method
+    total()
+    sout Hit(1) or Stay(2)
+    choice = input
+    while choice is not equal to 2,
+        draw()
+        total()
+        sout Hit(1) or Stay(2)
+        choice = input
+
+Dealer class
+    Dealer's cards array with same length
+    INT Number of dealer's cards
+    Turns will be taken by accessing the deck class; same for player
