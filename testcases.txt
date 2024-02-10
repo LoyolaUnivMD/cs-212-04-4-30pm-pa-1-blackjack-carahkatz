@@ -1,0 +1,5 @@
+I feel like for my way of thinking about this problem, creating the test cases makes
+more sense to do once I have a bit of the code done. I collect card decks, so I've
+no doubt played my fair share of blackjack and feel like I have a sufficient enough
+understanding of how the game works, what's realistic and what isn't just from
+experience.

@@ -22,11 +22,12 @@ Deck class
                     cardvalue = 11
                 else
                     cardvalue = 1
+            else if card[1] = 0,
+                cardvalue = 10
             else
                 cardvalue = (int) card[0]
             total += cardvalue
         return total
-
 
 Hand class
     Player's cards array with length like... idk, 21
