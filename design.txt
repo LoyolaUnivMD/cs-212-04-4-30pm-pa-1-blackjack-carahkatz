@@ -2,31 +2,31 @@ import Random
 import Scanner
 
 Deck class
-    String array of length 52
-    For loop through this length
-        Set each index to a card
-        (ex. AS, 1S, 2S, 3S, 4S, JS, QS, KS, AC, 1C, 2C, 3C, 4C, etc etc etc)
+    String array of length 52 = to all possible cards\
+    (ex. AS, 1S, 2S, 3S, 4S, JS, QS, KS, AC, 1C, 2C, 3C, 4C, etc etc etc)
 
-    Draw() method returns random card from this array via Random
+    Hit twice for player's starter hand
+    Hit once for dealer's starter hand; index 1 defaults to XX
 
-    Hit() method
+    Hit() method  -- FINISHED - returns random card from this array via Random
+        drawn card = deck value at random index
+        looking at the provided cards array, set the next open index to the drawn card (count + 1)
+        return the updated cards array
     Stay() method
-    total() method
+    total() method -- FINISHED
         initialize total = 0
         take player (or dealer's) number of cards as well as their cards array
         for card in cards,
-            if card[0] equals J, Q, or K,
-                cardvalue = 10
-            else if card[0] equals A,
+            if card contains J, Q, K, or 10,
+                cardValue = 10
+            else if card contains A,
                 if total <= 10
-                    cardvalue = 11
+                    cardValue = 11
                 else
-                    cardvalue = 1
-            else if card[1] = 0,
-                cardvalue = 10
+                    cardValue = 1
             else
-                cardvalue = (int) card[0]
-            total += cardvalue
+                cardValue = char at index 0
+            total += cardValue
         return total
 
 Hand class
