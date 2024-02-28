@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Deck {
-    Scanner input = new Scanner(System.in);
 
     // Initialize values
     int count;
@@ -42,11 +41,6 @@ public class Deck {
         // Logic: If count is 1, there is only a card in slot 0, so the next card is put into slot cards[count] aka slot 1
         cards[count] = drawnCard;
         return cards;
-    }
-
-    // Passes to the dealer's turn
-    public void stay() {
-
     }
 
     // Total method tallies each card's value

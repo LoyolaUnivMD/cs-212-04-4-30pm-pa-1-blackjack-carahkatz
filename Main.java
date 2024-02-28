@@ -42,7 +42,10 @@ public class Main {
         // Initial display
         Deck.display(dealerHand, playerHand, playerCount, playerValue);
 
+        // ***PLAYER TURN***
         // Initial choice
+        boolean dealerWins = false;
+
         if (playerValue != 21) {
             // Get choice to hit or stay with error checking
             int choice = input.nextInt();
@@ -52,7 +55,7 @@ public class Main {
             }
 
             // Loop through choices to hit
-            while (choice == 1) {
+            while (choice == 1 && !dealerWins) {
                 player.hit(playerHand, playerCount);
                 playerCount++;
 
@@ -69,17 +72,56 @@ public class Main {
                         choice = input.nextInt();
                     }
                 } else if (playerValue == 21) {
-                    // Go to dealer's turn
-                } else {
-                    System.out.println("Dealer wins");
+                    // If playerValue has become 21, Go to dealer's turn
                     break;
+                } else {
+                    dealerWins = true;
+                    System.out.println("Dealer wins");
+                    //break;
                 }
             }
 
-            // Once stay is chosen, go to dealer's turn
-
+            // Exit while loop, aka: stay has been chosen, go to dealer's turn
 
         }
-        // If initial playerValue IS 21, go to dealer's turn
+        // If initial playerValue IS 21, go to dealer's turn IF dealer hasn't already won
+
+        // ***DEALER TURN***
+        if (!dealerWins) {
+            // Give dealer second card
+            dealer.hit(dealerHand, dealerCount);
+            dealerCount++;
+            dealerValue = dealer.total(dealerHand, dealerCount, dealerValue);
+            // Reveal hand & value
+            System.out.println("Dealer: " + dealerHand[0] + " " + dealerHand[1]);
+            System.out.println(dealerValue);
+
+            while (dealerValue < playerValue) {
+                // Give dealer another card
+                dealer.hit(dealerHand, dealerCount);
+                dealerCount++;
+                dealerValue = dealer.total(dealerHand, dealerCount, dealerValue);
+
+                // Show updated hand/value
+                System.out.print("Dealer: ");
+                for (int i = 0; i < dealerCount; i++) {
+                    //System.out.println("Dealer: " + dealerHand[0] + " " + dealerHand[1]);
+                    System.out.print(dealerHand[i] + " ");
+                }
+                System.out.print("\n");
+                System.out.println(dealerValue);
+            }
+        }
+
+        // ***SEE WHO WON***
+        if (playerValue > dealerValue || dealerValue > 21) {
+            System.out.println("Player wins");
+        }
+        else if (dealerValue > playerValue) {
+            System.out.println("Dealer wins");
+        }
+        else {
+            System.out.println("Tie");
+        }
     }
 }
