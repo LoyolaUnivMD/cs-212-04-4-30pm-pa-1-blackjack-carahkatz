@@ -1,7 +1,7 @@
 //pa1
 import java.util.Scanner;  // Import the Scanner class
 
-public class PA1 {
+public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("A game of Blackjack:");
