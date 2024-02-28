@@ -31,7 +31,7 @@ Deck class
         return total
 
 Main class
-    Player's cards array with length like... idk, 21
+    Player's cards array with length like... idk, 11
     INT Number of player's cards //keep track, so like with each newcard +1 to total cards
     Turns will be taken by accessing the deck class; same for dealer
 

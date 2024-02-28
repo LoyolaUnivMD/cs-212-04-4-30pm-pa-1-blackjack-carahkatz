@@ -14,15 +14,16 @@ public class Deck {
     }
 
     // Display method shows current hands
-    public static void display(String[] dealerHand, String[] playerHand) {
+    public static void display(String[] dealerHand, String[] playerHand, int handValue) {
 
         System.out.println("Dealer: " + dealerHand[0] + " " + dealerHand[1]);
         System.out.println("Player: " + playerHand[0] + " " + playerHand[1]);
+        System.out.println(handValue);
         System.out.println("Hit(1) or Stay(2)");
     }
 
 
-    // Draw method returns random value from this array
+    // Hit method returns random value from this array into next open hand slot
     public static String[] hit(String[] cards, int count) {
         // Initialize deck array
         String [] deck = new String[]{"AS", "1S", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS", "AD", "1D", "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD", "AC", "1C", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC", "AH", "1H", "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH"};
@@ -47,7 +48,7 @@ public class Deck {
         total = 0;
         int cardValue;
         // For each card until the total amount of cards has been reviewed,
-        for (int i = 0; i <= count; i++) {
+        for (int i = 0; i < count; i++) {
             // Select the current card
             String card = cards[i];
             // If a face card or 10, value 10
@@ -65,7 +66,7 @@ public class Deck {
             }
             // All other cards are single digit number cards and their value is the number they represent
             else {
-                cardValue = card.charAt(0);
+                cardValue = Character.getNumericValue(card.charAt(0));
             }
             total += cardValue;
         }
