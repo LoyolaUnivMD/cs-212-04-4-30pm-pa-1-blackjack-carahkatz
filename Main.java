@@ -43,10 +43,11 @@ public class Main {
         Deck.display(dealerHand, playerHand, playerCount, playerValue);
 
         // ***PLAYER TURN***
-        // Initial choice
         boolean dealerWins = false;
+        // Initial choice
 
         if (playerValue != 21) {
+            System.out.println("Hit(1) or Stay(2)");
             // Get choice to hit or stay with error checking
             int choice = input.nextInt();
             while (choice != 1 && choice != 2) {
@@ -64,6 +65,7 @@ public class Main {
 
                 if (playerValue < 21) {
                     Deck.display(dealerHand, playerHand, playerCount, playerValue);
+                    System.out.println("Hit(1) or Stay(2)");
 
                     // Get next choice with error checking
                     choice = input.nextInt();
@@ -73,9 +75,11 @@ public class Main {
                     }
                 } else if (playerValue == 21) {
                     // If playerValue has become 21, Go to dealer's turn
+                    Deck.display(dealerHand, playerHand, playerCount, playerValue);
                     break;
                 } else {
                     dealerWins = true;
+                    Deck.display(dealerHand, playerHand, playerCount, playerValue);
                     System.out.println("Dealer wins");
                     //break;
                 }
@@ -96,7 +100,7 @@ public class Main {
             System.out.println("Dealer: " + dealerHand[0] + " " + dealerHand[1]);
             System.out.println(dealerValue);
 
-            while (dealerValue < playerValue) {
+            while (dealerValue < 17) {
                 // Give dealer another card
                 dealer.hit(dealerHand, dealerCount);
                 dealerCount++;
@@ -114,13 +118,13 @@ public class Main {
         }
 
         // ***SEE WHO WON***
-        if (playerValue > dealerValue || dealerValue > 21) {
+        if (playerValue > dealerValue && !dealerWins || dealerValue > 21) {
             System.out.println("Player wins");
         }
         else if (dealerValue > playerValue) {
             System.out.println("Dealer wins");
         }
-        else {
+        else if (dealerValue == playerValue) {
             System.out.println("Tie");
         }
     }

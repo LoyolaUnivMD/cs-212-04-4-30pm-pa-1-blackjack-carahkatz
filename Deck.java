@@ -25,7 +25,6 @@ public class Deck {
         System.out.print("\n");
 
         System.out.println(handValue);
-        System.out.println("Hit(1) or Stay(2)");
     }
 
 
