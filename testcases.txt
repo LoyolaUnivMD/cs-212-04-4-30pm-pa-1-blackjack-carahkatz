@@ -1,5 +1,100 @@
-I feel like for my way of thinking about this problem, creating the test cases makes
-more sense to do once I have a bit of the code done. I collect card decks, so I've
-no doubt played my fair share of blackjack and feel like I have a sufficient enough
-understanding of how the game works, what's realistic and what isn't just from
-experience.
+TEST CASE 1
+    A game of Blackjack:
+    Dealer: 6D XX
+    Player: 5D 7H
+    12
+    Hit(1) or Stay(2)
+    1
+    Dealer: 6D XX
+    Player: 5D 7H AH
+    13
+    Hit(1) or Stay(2)
+    1
+    Dealer: 6D XX
+    Player: 5D 7H AH 6D
+    19
+    Hit(1) or Stay(2)
+    1
+    Dealer: 6D XX
+    Player: 5D 7H AH 6D AC
+    20
+    Hit(1) or Stay(2)
+    1
+    Dealer: 6D XX
+    Player: 5D 7H AH 6D AC 1D
+    21
+    Dealer: 6D 1S
+    7
+    Dealer: 6D 1S 5H
+    12
+    Dealer: 6D 1S 5H 6H
+    18
+    Player wins
+
+TEST CASE 2
+    A game of Blackjack:
+    Dealer: 7D XX
+    Player: KS 3C
+    13
+    Hit(1) or Stay(2)
+    1
+    Dealer: 7D XX
+    Player: KS 3C 2C
+    15
+    Hit(1) or Stay(2)
+    1
+    Dealer: 7D XX
+    Player: KS 3C 2C 1S
+    16
+    Hit(1) or Stay(2)
+    1
+    Dealer: 7D XX
+    Player: KS 3C 2C 1S 1S
+    17
+    Hit(1) or Stay(2)
+    1
+    Dealer: 7D XX
+    Player: KS 3C 2C 1S 1S 8C
+    25
+    Dealer wins
+
+TEST CASE 3
+    A game of Blackjack:
+    Dealer: 5S XX
+    Player: 1H QD
+    11
+    Hit(1) or Stay(2)
+    1
+    Dealer: 5S XX
+    Player: 1H QD QS
+    21
+    Dealer: 5S 7D
+    12
+    Dealer: 5S 7D 8S
+    20
+    Player wins
+
+TEST CASE 4
+    A game of Blackjack:
+    Dealer: QC XX
+    Player: 9D 10S
+    19
+    Hit(1) or Stay(2)
+    2
+    Dealer: QC 2S
+    12
+    Dealer: QC 2S 9C
+    21
+    Dealer wins
+
+TEST CASE 5
+    A game of Blackjack:
+    Dealer: JD XX
+    Player: 9D QC
+    19
+    Hit(1) or Stay(2)
+    1
+    Dealer: JD XX
+    Player: 9D QC 5C
+    24
+    Dealer wins

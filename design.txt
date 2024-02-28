@@ -2,7 +2,7 @@ import Random
 import Scanner
 
 Deck class
-    String array of length 52 = to all possible cards\
+    String array of length 52 = to all possible cards
     (ex. AS, 1S, 2S, 3S, 4S, JS, QS, KS, AC, 1C, 2C, 3C, 4C, etc etc etc)
 
     Hit twice for player's starter hand
