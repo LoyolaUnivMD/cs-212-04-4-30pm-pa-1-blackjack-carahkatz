@@ -13,6 +13,7 @@ Deck class
         looking at the provided cards array, set the next open index to the drawn card (count + 1)
         return the updated cards array
     Stay() method
+
     total() method -- FINISHED
         initialize total = 0
         take player (or dealer's) number of cards as well as their cards array
@@ -29,7 +30,7 @@ Deck class
             total += cardValue
         return total
 
-Hand class
+Main class
     Player's cards array with length like... idk, 21
     INT Number of player's cards //keep track, so like with each newcard +1 to total cards
     Turns will be taken by accessing the deck class; same for dealer
@@ -44,7 +45,7 @@ Hand class
         sout Hit(1) or Stay(2)
         choice = input
 
-Dealer class
+
     Dealer's cards array with same length
     INT Number of dealer's cards
     Turns will be taken by accessing the deck class; same for player
