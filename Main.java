@@ -31,7 +31,7 @@ public class Main {
 
         // ***BEGINNING GAME***
         // Initial display
-        Deck.display(dealerHand, playerHand, playerValue);
+        Deck.display(dealerHand, playerHand, playerCount, playerValue);
 
         // Initial choice
         // Input failsafe credit to https://howtodoinjava.com/java/io/read-typesafe-input-scanner-class/
@@ -54,7 +54,7 @@ public class Main {
             System.out.println("Debug: " + playerValue);
 
             if (playerValue <= 21) {
-                Deck.display(dealerHand, playerHand, playerValue);
+                Deck.display(dealerHand, playerHand, playerCount, playerValue);
                 choice = input.nextInt();
             }
             else {

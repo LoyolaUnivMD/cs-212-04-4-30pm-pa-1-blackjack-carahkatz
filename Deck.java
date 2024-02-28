@@ -14,10 +14,17 @@ public class Deck {
     }
 
     // Display method shows current hands
-    public static void display(String[] dealerHand, String[] playerHand, int handValue) {
+    public static void display(String[] dealerHand, String[] playerHand, int playerCount, int handValue) {
 
         System.out.println("Dealer: " + dealerHand[0] + " " + dealerHand[1]);
-        System.out.println("Player: " + playerHand[0] + " " + playerHand[1]);
+
+        System.out.print("Player: ");
+        for (int i = 0; i < playerCount; i++) {
+            //System.out.println("Player: " + playerHand[0] + " " + playerHand[1]);
+            System.out.print(playerHand[i] + " ");
+        }
+        System.out.print("\n");
+
         System.out.println(handValue);
         System.out.println("Hit(1) or Stay(2)");
     }
