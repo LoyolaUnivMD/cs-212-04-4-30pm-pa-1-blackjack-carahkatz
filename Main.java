@@ -22,11 +22,11 @@ public class Main {
         int playerValue = 0;
         Deck player = new Deck(playerHand, playerCount);
 
-        Deck.hit(playerHand, playerCount);
+        player.hit(playerHand, playerCount);
         playerCount++;
-        Deck.hit(playerHand, playerCount);
+        player.hit(playerHand, playerCount);
         playerCount++;
-        playerValue = Deck.total(playerHand, playerCount, playerValue);
+        playerValue = player.total(playerHand, playerCount, playerValue);
 
         // Dealer's hand
         String [] dealerHand = new String[11];
@@ -34,7 +34,7 @@ public class Main {
         int dealerValue = 0;
         Deck dealer = new Deck(dealerHand, dealerCount);
 
-        Deck.hit(dealerHand, dealerCount);
+        dealer.hit(dealerHand, dealerCount);
         dealerCount++;
         dealerHand[1] = "XX";
 
@@ -53,10 +53,10 @@ public class Main {
 
             // Loop through choices to hit
             while (choice == 1) {
-                Deck.hit(playerHand, playerCount);
+                player.hit(playerHand, playerCount);
                 playerCount++;
 
-                playerValue = Deck.total(playerHand, playerCount, playerValue);
+                playerValue = player.total(playerHand, playerCount, playerValue);
                 //System.out.println("Debug: " + playerValue);
 
                 if (playerValue < 21) {
