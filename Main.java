@@ -1,5 +1,14 @@
+/**
+ *
+ // Input for isDigit equivalent failsafe: https://howtodoinjava.com/java/io/read-typesafe-input-scanner-class/
+ while (!input.hasNextInt()) {
+ input.nextLine();
+ System.out.println("Please enter 1 or 2: ");
+ }
+ */
+
 //pa1
-import java.util.Scanner;  // Import the Scanner class
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,33 +43,41 @@ public class Main {
         Deck.display(dealerHand, playerHand, playerCount, playerValue);
 
         // Initial choice
-        // Input failsafe credit to https://howtodoinjava.com/java/io/read-typesafe-input-scanner-class/
-        while (!input.hasNextInt()) {
-            input.nextLine();
-            System.out.println("Please enter 1 or 2.: ");
-        }
         int choice = input.nextInt();
         while (choice != 1 && choice != 2) {
             System.out.println("Please enter 1 or 2: ");
             choice = input.nextInt();
         }
 
-        // Loop through choices
+        // Loop through choices to hit
         while (choice == 1) {
             Deck.hit(playerHand, playerCount);
             playerCount++;
 
             playerValue = Deck.total(playerHand, playerCount, playerValue);
-            System.out.println("Debug: " + playerValue);
+            //System.out.println("Debug: " + playerValue);
 
-            if (playerValue <= 21) {
+            if (playerValue < 21) {
                 Deck.display(dealerHand, playerHand, playerCount, playerValue);
+
+                // Error checked
                 choice = input.nextInt();
+                while (choice != 1 && choice != 2) {
+                    System.out.println("Please enter 1 or 2: ");
+                    choice = input.nextInt();
+                }
+            }
+            else if (playerValue == 21) {
+                //Goes to dealer's turn
             }
             else {
                 System.out.println("Dealer wins");
                 break;
             }
         }
+
+        // Once stay is chosen, go to dealer's turn
+
+
     }
 }
